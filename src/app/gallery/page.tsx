@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import Layout from "@/components/layout/Layout";
+import PageHero from "@/components/ui/PageHero";
 import { galleryContent } from "@/content/gallery";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -8,17 +9,20 @@ import GalleryClient from "./GalleryClient";
 
 export const metadata: Metadata = createPageMetadata(
   "Gallery",
-  "Explore restaurant food, atmosphere, events, and behind-the-scenes photos.",
+  "See Ta Chingón tacos, birria, tortas, loaded favorites, food-truck artwork, and catering dishes.",
   "/gallery",
 );
 
 export default function GalleryPage() {
   return (
     <Layout>
-      <div className="bg-brand-surface py-14 md:py-16">
+      <PageHero
+        eyebrow="Fresh from the feed"
+        title={galleryContent.title}
+        intro={galleryContent.intro}
+      />
+      <div className="paper-texture py-16 lg:py-20">
         <div className="site-container">
-          <h1 className="page-heading">{galleryContent.title}</h1>
-          <p className="page-intro mb-12">{galleryContent.intro}</p>
           <GalleryClient />
         </div>
       </div>

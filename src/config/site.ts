@@ -1,66 +1,78 @@
 import type { NavigationItem } from "@/types/content";
 
-/**
- * Start every new restaurant site here.
- *
- * Replace the placeholder business information, turn optional links on or off,
- * and update the matching files in src/content and public/images.
- */
 export const siteConfig = {
-  businessName: "Restaurant Name",
+  businessName: "Ta Chingón Taqueria",
+  legalName: "TA Chingon Taqueria LLC.",
   wordmark: {
-    topLine: "RESTAURANT NAME",
-    bottomLine: "KITCHEN & CAFE",
+    topLine: "TA CHINGÓN",
+    bottomLine: "TAQUERIA",
   },
-  tagline: "Fresh food, warm service, and a place for the neighborhood.",
+  tagline: "Tacos, burritos y más.",
   description:
-    "A welcoming neighborhood restaurant serving thoughtfully prepared food in a relaxed setting.",
-  siteUrl: "https://example.com",
+    "Authentic Mexican food truck in Cherry Hill, New Jersey, serving tacos, quesabirrias, burritos, tortas, aguas frescas, and full-service catering across South Jersey.",
+  siteUrl: "https://www.tachingonfoodtruck.com",
   locale: "en_US",
   navigation: [
     { href: "/", label: "Home" },
     { href: "/menu", label: "Menu" },
-    { href: "/catering-events", label: "Catering & Events" },
+    { href: "/catering-events", label: "Catering" },
     { href: "/gallery", label: "Gallery" },
     { href: "/reviews", label: "Reviews" },
-    { href: "/contact", label: "Contact" },
+    { href: "/contact", label: "Visit Us" },
   ] satisfies NavigationItem[],
   contact: {
-    phoneDisplay: "(856) 555-0123",
-    phoneHref: "+18565550123",
-    email: "hello@example.com",
-    addressLines: ["123 Main Street", "Your City, ST 00000"],
+    phoneDisplay: "(856) 993-9743",
+    phoneHref: "+18569939743",
+    email: "tachingon672@gmail.com",
+    locationName: "Regular Cherry Hill stop",
+    addressLines: ["7 Burnt Mill Rd", "Cherry Hill, NJ 08003"],
+    streetAddress: "7 Burnt Mill Rd",
+    addressLocality: "Cherry Hill",
+    addressRegion: "NJ",
+    postalCode: "08003",
+    locationNote:
+      "The truck also serves at Cherry Hill Liquors, private events, and community stops across South Jersey. Check Instagram or call before traveling.",
   },
   hours: [
-    { days: "Monday–Thursday", times: "7:00 AM–3:00 PM" },
-    { days: "Friday–Saturday", times: "7:00 AM–8:00 PM" },
-    { days: "Sunday", times: "8:00 AM–2:00 PM" },
+    { days: "Monday", times: "Closed / private events" },
+    { days: "Tuesday–Thursday", times: "11:00 AM–5:00 PM" },
+    { days: "Friday", times: "Events & catering" },
+    { days: "Saturday", times: "11:00 AM–5:00 PM or events" },
+    { days: "Sunday", times: "Closed / private events" },
   ],
+  scheduleNote:
+    "Food-truck hours and locations can change for catering and community events. Check the latest social post before heading over.",
   ordering: {
-    enabled: false,
+    enabled: true,
     label: "Order Online",
-    url: "",
+    url: "https://www.doordash.com/store/tachingon-taqueria-cherry-hill-31106560/",
   },
   reviews: {
-    label: "Read More Reviews on Google",
-    url: "",
+    label: "Find Us on Google",
+    url: "https://www.google.com/maps/search/?api=1&query=Ta%20Chingon%20Taqueria%20LLC%20Cherry%20Hill%20NJ",
   },
   social: {
-    instagramUrl: "",
-    facebookUrl: "",
+    instagramHandle: "@tachingonfoodtruck",
+    instagramUrl: "https://www.instagram.com/tachingonfoodtruck",
+    facebookUrl: "https://www.facebook.com/tachingonfoodtruck/",
   },
-  newsletter: {
-    enabled: true,
-    title: "Join Our List",
-    description: "Get seasonal menu news, events, and restaurant updates.",
+  announcement: {
+    text: "Our truck moves for events—check Instagram for today’s location.",
+    linkLabel: "See latest updates",
+    linkUrl: "https://www.instagram.com/tachingonfoodtruck",
   },
   assets: {
-    logo: "/images/brand/logo.svg",
-    favicon: "/images/brand/favicon.svg",
-    socialImage: "/images/brand/social-card.svg",
+    logo: "/images/brand/ta-chingon-wordmark.png",
+    mark: "/images/brand/ta-chingon-logo.png",
+    favicon: "/images/brand/ta-chingon-logo.png",
+    socialImage: "/images/site/hero-tacos.jpg",
   },
 } as const;
 
 export const fullAddress = siteConfig.contact.addressLines.join(", ");
-export const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`;
-export const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(fullAddress)}&output=embed`;
+export const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  `${siteConfig.businessName}, ${fullAddress}`,
+)}`;
+export const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(
+  `${siteConfig.businessName}, ${fullAddress}`,
+)}&output=embed`;

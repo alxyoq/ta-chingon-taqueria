@@ -21,9 +21,9 @@ export function createPageMetadata(
       images: [
         {
           url: siteConfig.assets.socialImage,
-          width: 1200,
-          height: 630,
-          alt: `${siteConfig.businessName} social preview`,
+          width: 1800,
+          height: 1100,
+          alt: "Ta Chingón tacos and aguas frescas",
         },
       ],
     },

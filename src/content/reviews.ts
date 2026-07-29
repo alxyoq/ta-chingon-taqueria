@@ -1,48 +1,49 @@
+import { siteConfig } from "@/config/site";
 import type { Review } from "@/types/content";
 
-/**
- * Replace these prompts with verified customer reviews before launch.
- * Do not invent endorsements or publish private customer information.
- */
 export const reviewsContent = {
-  title: "Reviews",
+  title: "South Jersey Is Talking",
   intro:
-    "Replace the cards below with real, permission-safe customer reviews from the business’s public profiles.",
+    "Guests come for the tacos and birria—and remember the warm service, fresh ingredients, and generous portions.",
   items: [
     {
-      name: "Customer Name",
-      date: "Review date",
+      name: "Autumn M.",
+      date: "February 2026",
       content:
-        "Add a short, authentic customer quote here. One or two sentences is ideal for the homepage.",
+        "10/10. Tacos are amazing. Burritos are amazing. Everything is amazing! Customer service is excellent!",
       rating: 5,
       source: "Google",
+      link: siteConfig.reviews.url,
       featured: true,
     },
     {
-      name: "Customer Name",
-      date: "Review date",
+      name: "Char S.",
+      date: "June 2025",
       content:
-        "Add a review that highlights the food, service, atmosphere, or another meaningful part of the guest experience.",
+        "The chicken quesadilla is absolutely delicious. Great food and customer service!",
+      rating: 5,
+      source: "DoorDash",
+      link: siteConfig.ordering.url,
+      featured: true,
+    },
+    {
+      name: "South Jersey diner",
+      date: "June 2026",
+      content:
+        "The al pastor tacos were amazing, and the chips and guacamole tasted incredibly fresh.",
+      rating: 5,
+      source: "Restaurantji",
+      link: "https://www.restaurantji.com/nj/cherry-hill/ta-chingon-taqueria-llc-/",
+      featured: true,
+    },
+    {
+      name: "Mauricio R.",
+      date: "November 2025",
+      content:
+        "Real authentic Mexican food. The birria tacos, al pastor, and milanesa cemita were all delicious.",
       rating: 5,
       source: "Google",
-      featured: true,
-    },
-    {
-      name: "Customer Name",
-      date: "Review date",
-      content:
-        "Add another verified review here. Keep the original meaning and avoid editing a quote in a misleading way.",
-      rating: 5,
-      source: "Facebook",
-      featured: true,
-    },
-    {
-      name: "Customer Name",
-      date: "Review date",
-      content:
-        "Use additional cards for reviews that add something distinct, such as catering, takeout, or a family celebration.",
-      rating: 5,
-      source: "Yelp",
+      link: siteConfig.reviews.url,
     },
   ] satisfies Review[],
 } as const;

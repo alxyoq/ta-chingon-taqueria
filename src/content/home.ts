@@ -1,54 +1,84 @@
 import { siteConfig } from "@/config/site";
-import type { ContentLink, FeaturedSection } from "@/types/content";
 
 export const homeContent = {
   hero: {
-    image: "/images/site/hero.svg",
+    image: "/images/site/hero-tacos.jpg",
     imageAlt:
-      "Replace with a wide hero photo of the restaurant or signature food",
+      "A tray of Ta Chingón al pastor tacos topped with pineapple, onion, and cilantro",
+    eyebrow: "Authentic Mexican food truck · Cherry Hill, NJ",
+    title: "Tacos, burritos y más.",
+    description:
+      "Big Mexican flavor from our family-run truck—served in Cherry Hill and at celebrations across South Jersey.",
+    primaryCta: { href: "/menu", label: "Explore the Menu" },
+    secondaryCta: {
+      href: siteConfig.ordering.url,
+      label: siteConfig.ordering.label,
+      external: true,
+    },
   },
   intro: {
-    heading: siteConfig.businessName,
-    tagline: siteConfig.tagline,
-    serviceLine: "Breakfast · Lunch · Dinner",
-    hoursSummary: "See our current hours and location before your visit.",
+    eyebrow: "Bienvenidos",
+    heading: "Come hungry. Leave chingón.",
+    paragraphs: [
+      "Ta Chingón began with a passion for authentic Mexican flavor and a dream of bringing the taste of home to our community.",
+      "From al pastor and Sinaloa-style birria to loaded burritos, tortas, quesadillas, and rotating street-food specials, everything is made to deliver a bold, satisfying bite.",
+    ],
+    image: "/images/brand/ta-chingon-wordmark.png",
+    imageAlt:
+      "Ta Chingón Taqueria logo with the green pepper mascot holding a maraca",
   },
-  quickLinks: [
-    { href: "/menu", label: "Menu" },
-    { href: "/contact#location", label: "Location" },
-  ] satisfies ContentLink[],
-  sections: [
-    {
-      title: `Welcome to ${siteConfig.businessName}`,
-      paragraphs: [
-        "Replace this paragraph with a short introduction to the restaurant, the people behind it, and what makes the experience memorable.",
-        "Keep this section warm and concise. Two short paragraphs usually work better than a long company history.",
-      ],
-      image: "/images/site/about.svg",
-      imageAlt:
-        "Replace with a photo of the dining room, team, or restaurant exterior",
-      imagePosition: "right",
-    },
-    {
-      title: "Food Made for the Moment",
-      paragraphs: [
-        "Describe the menu in a few sentences. Mention the restaurant’s specialties, sourcing, cooking style, or the meals it serves.",
-      ],
-      image: "/images/site/food.svg",
-      imageAlt: "Replace with a close-up photo of a signature menu item",
-      imagePosition: "left",
-      cta: { href: "/menu", label: "View Menu" },
-    },
-    {
-      title: "Catering & Events",
-      paragraphs: [
-        "Explain what the business offers for celebrations, office meals, private events, or off-site catering.",
-        "Invite guests to get in touch for menu options, availability, and pricing.",
-      ],
-      image: "/images/site/catering.svg",
-      imageAlt: "Replace with a photo of a catered spread or private event",
-      imagePosition: "right",
-      cta: { href: "/catering-events", label: "Plan Your Event" },
-    },
-  ] satisfies FeaturedSection[],
+  favorites: {
+    eyebrow: "Customer favorites",
+    heading: "The good stuff",
+    intro:
+      "Start with the dishes South Jersey keeps coming back for, then find your own favorite.",
+    items: [
+      {
+        title: "Al Pastor Tacos",
+        description:
+          "Marinated pork, pineapple, onion, cilantro, warm corn tortillas, and house salsa.",
+        image: "/images/site/pastor-tacos.jpg",
+        imageAlt:
+          "Ta Chingón al pastor tacos with pineapple, onion, cilantro, lime, and salsa",
+      },
+      {
+        title: "Pizza Birria",
+        description:
+          "Slow-cooked birria and melted cheese with onion, cilantro, and rich consommé for dipping.",
+        image: "/images/site/pizza-birria.jpg",
+        imageAlt:
+          "Ta Chingón pizza birria on a wooden board with consommé and salsa",
+      },
+      {
+        title: "Papas Locas",
+        description:
+          "Crispy fries piled with your choice of meat, cheese, pico de gallo, and sour cream.",
+        image: "/images/site/crazy-fries.jpg",
+        imageAlt:
+          "Ta Chingón Papas Locas loaded fries with meat, pico de gallo, and sour cream",
+      },
+    ],
+  },
+  truck: {
+    eyebrow: "Find the yellow truck",
+    heading: "Cherry Hill home base. South Jersey roaming.",
+    paragraphs: [
+      `Our regular Cherry Hill stop is ${siteConfig.contact.addressLines.join(
+        ", ",
+      )}. We also roll out for festivals, breweries, community nights, and private events.`,
+      "Because the truck travels, the day’s location can change. Check Instagram or call before making the trip.",
+    ],
+    image: "/images/site/ta-chingon-poster.jpg",
+    imageAlt:
+      "Ta Chingón promotional artwork featuring the yellow food truck, tacos, cemita, aguas frescas, and elote",
+  },
+  catering: {
+    eyebrow: "We cater",
+    heading: "Bring the truck to your fiesta.",
+    description:
+      "Birthdays, weddings, office lunches, graduations, neighborhood parties, and public events—tell us what you’re planning and we’ll build the right service for your crowd.",
+    image: "/images/site/birria-empanadas.jpg",
+    imageAlt:
+      "Ta Chingón birria empanadas with consommé, cucumber, lime, and salsa",
+  },
 } as const;
