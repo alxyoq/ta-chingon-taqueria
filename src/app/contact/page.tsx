@@ -1,7 +1,6 @@
 import { Clock, Instagram, Mail, MapPin, Phone, Send } from "lucide-react";
 import type { Metadata } from "next";
 
-import NetlifyForm from "@/components/forms/NetlifyForm";
 import Layout from "@/components/layout/Layout";
 import PageHero from "@/components/ui/PageHero";
 import { directionsUrl, mapEmbedUrl, siteConfig } from "@/config/site";
@@ -150,7 +149,22 @@ export default function ContactPage() {
                 general questions, send the details below.
               </p>
 
-              <NetlifyForm formName="contact" className="space-y-5">
+              <form
+                name="contact"
+                method="POST"
+                action="/thank-you"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                className="space-y-5"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <p className="hidden">
+                  <label>
+                    Do not fill this out:
+                    <input name="bot-field" />
+                  </label>
+                </p>
+
                 <div>
                   <label
                     htmlFor="contact-name"
@@ -246,7 +260,7 @@ export default function ContactPage() {
                   <Send size={17} className="mr-2" aria-hidden="true" />
                   Send Message
                 </button>
-              </NetlifyForm>
+              </form>
             </section>
           </div>
         </div>
