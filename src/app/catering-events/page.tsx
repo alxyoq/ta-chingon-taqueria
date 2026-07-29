@@ -8,7 +8,6 @@ import {
 import type { Metadata } from "next";
 import Image from "next/image";
 
-import NetlifyForm from "@/components/forms/NetlifyForm";
 import Layout from "@/components/layout/Layout";
 import PageHero from "@/components/ui/PageHero";
 import { siteConfig } from "@/config/site";
@@ -118,10 +117,22 @@ export default function CateringEventsPage() {
                 </ul>
               </div>
 
-              <NetlifyForm
-                formName="catering"
+              <form
+                name="catering"
+                method="POST"
+                action="/thank-you"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
                 className="space-y-5 p-8 sm:p-10"
               >
+                <input type="hidden" name="form-name" value="catering" />
+                <p className="hidden">
+                  <label>
+                    Do not fill this out:
+                    <input name="bot-field" />
+                  </label>
+                </p>
+
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
                     <label
@@ -247,7 +258,7 @@ export default function CateringEventsPage() {
                   <Send size={17} className="mr-2" aria-hidden="true" />
                   Request Catering
                 </button>
-              </NetlifyForm>
+              </form>
             </div>
           </section>
 
