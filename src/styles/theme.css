@@ -1,19 +1,16 @@
 :root {
-  /*
-   * BRAND COLORS
-   * Change these six values to rebrand the entire site.
-   */
-  --color-primary: #a8663f;
-  --color-primary-dark: #874d2e;
-  --color-secondary: #536a57;
-  --color-accent: #ddb66f;
-  --color-surface: #fff8ee;
-  --color-ink: #29231f;
+  --color-primary: #b51018;
+  --color-primary-dark: #7f0b10;
+  --color-secondary: #13542f;
+  --color-accent: #f2c324;
+  --color-surface: #fff8df;
+  --color-ink: #152419;
+  --color-green-bright: #31b83d;
+  --color-paper: #fffdf4;
 
-  /*
-   * TYPOGRAPHY
-   * Replace these stacks or load licensed web fonts in src/app/layout.tsx.
-   */
-  --font-body: Arial, Helvetica, sans-serif;
-  --font-display: Georgia, "Times New Roman", serif;
+  --font-body:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --font-display:
+    Impact, Haettenschweiler, "Arial Narrow Bold", "Arial Narrow", sans-serif;
 }

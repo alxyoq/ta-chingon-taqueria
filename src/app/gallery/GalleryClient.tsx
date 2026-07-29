@@ -52,13 +52,13 @@ export default function GalleryClient() {
 
   return (
     <>
-      <div className="columns-1 gap-5 space-y-5 sm:columns-2 lg:columns-3 xl:columns-4">
+      <div className="columns-1 gap-5 space-y-5 sm:columns-2 lg:columns-3">
         {galleryContent.images.map((image, index) => (
           <button
             key={image.src}
             type="button"
             onClick={() => setCurrentImageIndex(index)}
-            className="group block w-full break-inside-avoid overflow-hidden rounded-2xl bg-white text-left shadow-soft"
+            className="group block w-full break-inside-avoid overflow-hidden rounded-[1.5rem] border-4 border-[var(--color-paper)] bg-white text-left shadow-xl"
             aria-label={`Open image ${index + 1}: ${image.alt}`}
             aria-haspopup="dialog"
           >
@@ -68,7 +68,7 @@ export default function GalleryClient() {
               width={image.width}
               height={image.height}
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-              className="h-auto w-full transition-transform duration-300 group-hover:scale-[1.02]"
+              className="h-auto w-full transition-transform duration-500 group-hover:scale-[1.035]"
             />
           </button>
         ))}
@@ -77,7 +77,7 @@ export default function GalleryClient() {
       {currentImage && currentImageIndex !== null ? (
         <dialog
           open
-          className="fixed inset-0 z-[100] m-0 flex h-screen max-h-none w-screen max-w-none items-center justify-center border-0 bg-black/90 p-4"
+          className="fixed inset-0 z-[100] m-0 flex h-screen max-h-none w-screen max-w-none items-center justify-center border-0 bg-black/95 p-4"
           aria-modal="true"
           aria-label="Image gallery lightbox"
           onMouseDown={(event) => {
@@ -87,7 +87,7 @@ export default function GalleryClient() {
           <button
             type="button"
             onClick={closeLightbox}
-            className="absolute right-4 top-4 z-10 rounded-full bg-black/40 p-2 text-white hover:text-brand-accent"
+            className="absolute right-4 top-4 z-10 rounded-full bg-brand-primary p-2 text-white hover:bg-brand-primary-dark"
             aria-label="Close lightbox"
             autoFocus
           >
@@ -96,7 +96,7 @@ export default function GalleryClient() {
           <button
             type="button"
             onClick={showPrevious}
-            className="absolute left-2 z-10 rounded-full bg-black/40 p-2 text-white hover:text-brand-accent sm:left-5"
+            className="absolute left-2 z-10 rounded-full bg-black/50 p-2 text-white hover:bg-brand-primary sm:left-5"
             aria-label="Previous image"
           >
             <ChevronLeft size={38} />
@@ -104,7 +104,7 @@ export default function GalleryClient() {
           <button
             type="button"
             onClick={showNext}
-            className="absolute right-2 z-10 rounded-full bg-black/40 p-2 text-white hover:text-brand-accent sm:right-5"
+            className="absolute right-2 z-10 rounded-full bg-black/50 p-2 text-white hover:bg-brand-primary sm:right-5"
             aria-label="Next image"
           >
             <ChevronRight size={38} />
@@ -120,7 +120,7 @@ export default function GalleryClient() {
               className="object-contain"
             />
           </div>
-          <p className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-black/50 px-4 py-2 text-sm text-white">
+          <p className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-brand-primary px-4 py-2 text-sm font-bold text-white">
             {currentImageIndex + 1} / {imageCount}
           </p>
         </dialog>

@@ -6,7 +6,7 @@
 
 @layer base {
   * {
-    @apply border-gray-200;
+    @apply border-black/10;
   }
 
   html {
@@ -14,7 +14,7 @@
   }
 
   body {
-    @apply bg-brand-surface text-brand-ink font-body antialiased;
+    @apply bg-brand-surface font-body text-brand-ink antialiased;
   }
 
   h1,
@@ -23,11 +23,22 @@
   h4,
   h5,
   h6 {
-    @apply font-display;
+    @apply font-display uppercase;
+    letter-spacing: 0.025em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-ink);
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-brand-primary ring-offset-2;
+    @apply outline-none ring-2 ring-brand-primary ring-offset-2 ring-offset-brand-surface;
   }
 }
 
@@ -43,7 +54,17 @@
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.55s ease-out forwards;
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-fadeIn {
+    animation: none;
+  }
 }
 
 @layer components {
@@ -52,22 +73,49 @@
   }
 
   .btn-primary {
-    @apply inline-flex min-h-11 items-center justify-center rounded-full bg-brand-primary px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-primary-dark;
+    @apply inline-flex min-h-11 items-center justify-center rounded-full bg-brand-primary px-6 py-3 text-sm font-extrabold uppercase tracking-[0.08em] text-white shadow-[0_5px_0_var(--color-primary-dark)] transition-all hover:-translate-y-0.5 hover:bg-brand-primary-dark hover:shadow-[0_7px_0_#5d080c] active:translate-y-1 active:shadow-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-11 items-center justify-center rounded-full bg-brand-accent px-6 py-3 text-sm font-extrabold uppercase tracking-[0.08em] text-brand-ink shadow-[0_5px_0_#b98707] transition-all hover:-translate-y-0.5 hover:bg-yellow-300 hover:shadow-[0_7px_0_#9b7205] active:translate-y-1 active:shadow-none;
   }
 
   .btn-outline {
-    @apply inline-flex min-h-11 items-center justify-center rounded-full border border-brand-primary px-5 py-2.5 font-semibold text-brand-primary transition-colors hover:bg-brand-primary hover:text-white;
+    @apply inline-flex min-h-11 items-center justify-center rounded-full border-2 border-brand-primary px-5 py-2.5 text-sm font-extrabold uppercase tracking-[0.07em] text-brand-primary transition-colors hover:bg-brand-primary hover:text-white;
   }
 
   .page-heading {
-    @apply text-center text-4xl text-brand-primary md:text-5xl;
+    @apply text-center text-4xl leading-none text-brand-primary sm:text-5xl md:text-6xl;
   }
 
   .page-intro {
-    @apply mx-auto mt-5 max-w-3xl text-center text-lg leading-8 text-brand-secondary;
+    @apply mx-auto mt-5 max-w-3xl text-center text-lg leading-8 text-brand-ink/75;
   }
 
   .content-card {
-    @apply rounded-2xl bg-white shadow-soft;
+    @apply rounded-[1.75rem] border border-black/10 bg-[var(--color-paper)] shadow-[0_16px_45px_rgb(21_36_25_/_0.10)];
+  }
+
+  .paper-texture {
+    background-color: var(--color-surface);
+    background-image:
+      radial-gradient(circle at 12% 18%, rgb(181 16 24 / 0.035) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 76% 63%, rgb(19 84 47 / 0.04) 0 1px, transparent 1.5px);
+    background-size:
+      22px 22px,
+      28px 28px;
+  }
+
+  .brush-label {
+    @apply inline-flex -rotate-1 items-center bg-brand-primary px-4 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-white;
+    clip-path: polygon(2% 6%, 100% 0, 97% 92%, 0 100%);
+  }
+
+  .section-kicker {
+    @apply mb-4 text-xs font-black uppercase tracking-[0.2em] text-brand-primary;
+  }
+
+  .flag-shape {
+    clip-path: polygon(0 0, 100% 0, 100% 82%, 84% 100%, 66% 84%, 50% 100%, 33% 84%, 16% 100%, 0 82%);
   }
 }

@@ -1,27 +1,44 @@
 export const cateringContent = {
-  title: "Catering & Events",
+  title: "Bring Ta Chingón to the Party",
   intro:
-    "Replace this copy with the restaurant’s catering options, event capacity, service area, lead time, and any minimum order requirements.",
+    "Full-service food-truck catering with authentic Mexican flavor, a colorful setup, and a menu built for your crowd.",
   details: [
-    "Offer guests a clear picture of the occasions you serve, from office lunches to birthdays and private dinners.",
-    "Mention whether menus are fixed, customizable, pickup-only, delivered, or fully staffed.",
+    "We cater birthdays, weddings, graduations, office lunches, school events, festivals, breweries, and neighborhood gatherings across South Jersey.",
+    "Tell us your date, location, guest count, and favorite menu items. We’ll follow up with availability and service options for your event.",
+  ],
+  services: [
+    {
+      title: "Private Parties",
+      description:
+        "A lively food-truck experience for birthdays, anniversaries, graduations, and backyard fiestas.",
+    },
+    {
+      title: "Weddings & Celebrations",
+      description:
+        "Fresh tacos and Mexican favorites served in a fun, memorable format your guests will talk about.",
+    },
+    {
+      title: "Corporate & Community",
+      description:
+        "Flexible service for office lunches, schools, festivals, breweries, and public events.",
+    },
   ],
   mainImage: {
-    src: "/images/site/catering.svg",
-    alt: "Replace with a wide photo of a catered spread or private event",
+    src: "/images/site/birria-empanadas.jpg",
+    alt: "Birria empanadas presented with consommé, cucumber, lime, and salsa",
   },
   gallery: [
     {
-      src: "/images/site/event-1.svg",
-      alt: "Replace with a catering setup photo",
+      src: "/images/site/pizza-birria.jpg",
+      alt: "Pizza birria prepared for sharing",
     },
     {
-      src: "/images/site/event-2.svg",
-      alt: "Replace with a private event photo",
+      src: "/images/site/nachos-rancheros.jpg",
+      alt: "A generous tray of loaded Nachos Rancheros",
     },
     {
-      src: "/images/site/event-3.svg",
-      alt: "Replace with a catered food photo",
+      src: "/images/site/hero-tacos.jpg",
+      alt: "A catering tray filled with al pastor tacos and salsa",
     },
   ],
 } as const;

@@ -1,24 +1,16 @@
 import type { ReactNode } from "react";
 
-import NewsletterSignup from "../ui/NewsletterSignup";
 import Footer from "./Footer";
 import Header from "./Header";
+import MobileActionBar from "./MobileActionBar";
 
-interface LayoutProps {
-  children: ReactNode;
-  showNewsletter?: boolean;
-}
-
-export default function Layout({
-  children,
-  showNewsletter = true,
-}: LayoutProps) {
+export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="paper-texture flex min-h-screen flex-col pb-16 lg:pb-0">
       <Header />
       <main className="flex-grow">{children}</main>
-      {showNewsletter && <NewsletterSignup />}
       <Footer />
+      <MobileActionBar />
     </div>
   );
 }

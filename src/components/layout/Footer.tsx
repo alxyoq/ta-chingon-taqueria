@@ -1,96 +1,139 @@
-import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import {
+  ArrowRight,
+  Facebook,
+  Instagram,
+  Mail,
+  MapPin,
+  Phone,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 import { directionsUrl, siteConfig } from "@/config/site";
 
+import PapelPicado from "../ui/PapelPicado";
+
 export default function Footer() {
   return (
     <footer className="bg-brand-secondary text-white">
-      <div className="site-container py-10">
-        <div className="grid gap-9 text-sm sm:grid-cols-2 lg:grid-cols-4">
-          <div className="flex items-start">
+      <PapelPicado className="bg-brand-surface" />
+      <div className="site-container py-12">
+        <div className="grid gap-10 text-sm sm:grid-cols-2 lg:grid-cols-[1.15fr_1fr_1fr_1fr]">
+          <div>
             <Image
-              src={siteConfig.assets.logo}
+              src={siteConfig.assets.mark}
               alt={`${siteConfig.businessName} logo`}
-              width={160}
-              height={160}
-              className="h-32 w-32 object-contain lg:h-40 lg:w-40"
+              width={230}
+              height={230}
+              className="h-36 w-36 rounded-full bg-white object-contain"
             />
+            <p className="mt-4 max-w-xs leading-6 text-white/75">
+              Authentic Mexican food from our family-run truck in Cherry Hill
+              and at events across South Jersey.
+            </p>
+            <div className="mt-5 flex gap-3">
+              <a
+                href={siteConfig.social.instagramUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                className="rounded-full bg-white/10 p-2.5 hover:bg-brand-primary"
+              >
+                <Instagram size={19} />
+              </a>
+              <a
+                href={siteConfig.social.facebookUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook"
+                className="rounded-full bg-white/10 p-2.5 hover:bg-brand-primary"
+              >
+                <Facebook size={19} />
+              </a>
+            </div>
           </div>
 
           <div>
-            <h2 className="mb-3 text-xl">Visit Us</h2>
+            <h2 className="mb-4 text-2xl text-brand-accent">Find the Truck</h2>
             <div className="mb-3 flex items-start">
-              <MapPin size={17} className="mr-2 mt-0.5 shrink-0" />
-              <address className="not-italic leading-6">
-                {siteConfig.contact.addressLines.map((line) => (
-                  <span key={line} className="block">
-                    {line}
-                  </span>
-                ))}
-              </address>
+              <MapPin size={18} className="mr-2 mt-0.5 shrink-0" />
+              <div>
+                <p className="mb-1 font-bold">
+                  {siteConfig.contact.locationName}
+                </p>
+                <address className="not-italic leading-6 text-white/80">
+                  {siteConfig.contact.addressLines.map((line) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
+                </address>
+              </div>
             </div>
             <a
               href={directionsUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center text-brand-accent transition-colors hover:text-white"
+              className="inline-flex items-center font-bold text-brand-accent transition-colors hover:text-white"
             >
-              Get Directions <ArrowRight size={14} className="ml-1" />
+              Get directions <ArrowRight size={14} className="ml-1" />
             </a>
+            <p className="mt-4 text-xs leading-5 text-white/65">
+              {siteConfig.scheduleNote}
+            </p>
           </div>
 
           <div>
-            <h2 className="mb-3 text-xl">Restaurant Hours</h2>
-            <ul className="space-y-2">
+            <h2 className="mb-4 text-2xl text-brand-accent">Truck Hours</h2>
+            <ul className="space-y-2 text-white/80">
               {siteConfig.hours.map(({ days, times }) => (
                 <li key={days}>
-                  <span className="block font-semibold">{days}</span>
+                  <span className="block font-bold text-white">{days}</span>
                   <span>{times}</span>
                 </li>
               ))}
             </ul>
-            {siteConfig.ordering.enabled && siteConfig.ordering.url ? (
-              <a
-                href={siteConfig.ordering.url}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-4 inline-flex rounded-full bg-brand-surface px-4 py-2 font-semibold text-brand-secondary transition-opacity hover:opacity-90"
-              >
-                {siteConfig.ordering.label}
-              </a>
-            ) : null}
           </div>
 
           <div>
-            <h2 className="mb-3 text-xl">Contact Us</h2>
-            <a
-              href={`mailto:${siteConfig.contact.email}`}
-              className="mb-3 flex items-center transition-colors hover:text-brand-accent"
-            >
-              <Mail size={17} className="mr-2 shrink-0" />
-              {siteConfig.contact.email}
-            </a>
+            <h2 className="mb-4 text-2xl text-brand-accent">Talk to Us</h2>
             <a
               href={`tel:${siteConfig.contact.phoneHref}`}
-              className="flex items-center transition-colors hover:text-brand-accent"
+              className="mb-3 flex items-center font-bold transition-colors hover:text-brand-accent"
             >
               <Phone size={17} className="mr-2 shrink-0" />
               {siteConfig.contact.phoneDisplay}
             </a>
-            <Link
-              href="/contact"
-              className="mt-4 inline-flex text-brand-accent transition-colors hover:text-white"
+            <a
+              href={`mailto:${siteConfig.contact.email}`}
+              className="flex items-start break-all text-white/80 transition-colors hover:text-brand-accent"
             >
-              Send a message <ArrowRight size={14} className="ml-1 mt-1" />
+              <Mail size={17} className="mr-2 mt-0.5 shrink-0" />
+              {siteConfig.contact.email}
+            </a>
+            <a
+              href={siteConfig.ordering.url}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-secondary mt-5 text-[11px]"
+            >
+              {siteConfig.ordering.label}
+            </a>
+            <Link
+              href="/catering-events"
+              className="mt-5 inline-flex font-bold text-brand-accent transition-colors hover:text-white"
+            >
+              Plan catering <ArrowRight size={14} className="ml-1 mt-1" />
             </Link>
           </div>
         </div>
 
-        <div className="mt-9 border-t border-white/20 pt-5 text-center text-sm text-brand-surface">
-          © {new Date().getFullYear()} {siteConfig.businessName}. All rights
-          reserved.
+        <div className="mt-10 flex flex-col gap-3 border-t border-white/20 pt-6 text-center text-xs text-white/65 sm:flex-row sm:items-center sm:justify-between sm:text-left">
+          <p>
+            © {new Date().getFullYear()} {siteConfig.legalName} All rights
+            reserved.
+          </p>
+          <p>Hecho con sabor en Cherry Hill, New Jersey.</p>
         </div>
       </div>
     </footer>
