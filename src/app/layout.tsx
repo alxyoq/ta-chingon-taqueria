@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 
 import { siteConfig } from "@/config/site";
+import { PurchaseWebsiteButton } from "@/components/site/PurchaseWebsiteButton";
 
 import "./globals.css";
 
@@ -124,6 +125,7 @@ export default function RootLayout({
           {JSON.stringify(localBusinessSchema)}
         </script>
         {children}
+        <PurchaseWebsiteButton />
       </body>
     </html>
   );
