@@ -40,9 +40,9 @@ export default function FeaturedSections() {
           <Image
             src={intro.image}
             alt={intro.imageAlt}
-            width={440}
-            height={230}
-            className="relative mx-auto h-auto w-full max-w-md mix-blend-multiply"
+            width={1200}
+            height={400}
+            className="relative mx-auto h-auto w-full max-w-lg drop-shadow-[0_10px_20px_rgb(21_36_25_/_0.10)]"
           />
           <div className="mt-8 grid grid-cols-3 gap-2 text-center text-xs font-black uppercase tracking-wide">
             <span className="rounded-full bg-brand-primary px-2 py-2 text-white">

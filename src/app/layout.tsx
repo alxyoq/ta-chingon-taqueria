@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 
-import { siteConfig } from "@/config/site";
 import { PurchaseWebsiteButton } from "@/components/site/PurchaseWebsiteButton";
+import { siteConfig } from "@/config/site";
 
 import "./globals.css";
 
@@ -23,8 +23,20 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   icons: {
-    icon: siteConfig.assets.favicon,
-    apple: siteConfig.assets.favicon,
+    icon: [
+      {
+        url: siteConfig.assets.favicon,
+        type: "image/png",
+        sizes: "192x192",
+      },
+    ],
+    apple: [
+      {
+        url: siteConfig.assets.favicon,
+        type: "image/png",
+        sizes: "192x192",
+      },
+    ],
   },
   openGraph: {
     type: "website",
