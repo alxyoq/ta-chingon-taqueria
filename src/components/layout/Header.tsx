@@ -95,16 +95,16 @@ export default function Header() {
         <div className="mx-auto flex h-full max-w-screen-xl items-center justify-between px-3 sm:px-5">
           <Link
             href="/"
-            className="relative block w-[142px] sm:w-[170px]"
+            className="relative block w-[160px] sm:w-[190px]"
             aria-label={`${siteConfig.businessName} home`}
           >
             <Image
               src={siteConfig.assets.logo}
               alt={`${siteConfig.businessName} logo`}
-              width={440}
-              height={230}
+              width={1200}
+              height={400}
               priority
-              className="h-auto w-full mix-blend-multiply"
+              className="h-auto w-full"
             />
           </Link>
 

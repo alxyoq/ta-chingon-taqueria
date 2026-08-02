@@ -62,9 +62,9 @@ export const siteConfig = {
     linkUrl: "https://www.instagram.com/tachingonfoodtruck",
   },
   assets: {
-    logo: "/images/brand/ta-chingon-wordmark.png",
-    mark: "/images/brand/ta-chingon-logo.png",
-    favicon: "/images/brand/ta-chingon-logo.png",
+    logo: "/images/brand/ta-chingon-wordmark-v2.png",
+    mark: "/images/brand/ta-chingon-mark-v2.png",
+    favicon: "/images/brand/ta-chingon-icon-v2.png",
     socialImage: "/images/site/hero-tacos.jpg",
   },
 } as const;

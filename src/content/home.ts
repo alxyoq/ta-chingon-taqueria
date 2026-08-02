@@ -23,9 +23,9 @@ export const homeContent = {
       "Ta Chingón began with a passion for authentic Mexican flavor and a dream of bringing the taste of home to our community.",
       "From al pastor and Sinaloa-style birria to loaded burritos, tortas, quesadillas, and rotating street-food specials, everything is made to deliver a bold, satisfying bite.",
     ],
-    image: "/images/brand/ta-chingon-wordmark.png",
+    image: siteConfig.assets.logo,
     imageAlt:
-      "Ta Chingón Taqueria logo with the green pepper mascot holding a maraca",
+      "Ta Chingón Taqueria logo with a smiling green pepper mascot in a sombrero",
   },
   favorites: {
     eyebrow: "Customer favorites",

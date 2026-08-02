@@ -23,9 +23,9 @@ export default function Footer() {
             <Image
               src={siteConfig.assets.mark}
               alt={`${siteConfig.businessName} logo`}
-              width={230}
-              height={230}
-              className="h-36 w-36 rounded-full bg-white object-contain"
+              width={512}
+              height={512}
+              className="h-36 w-36 object-contain drop-shadow-lg"
             />
             <p className="mt-4 max-w-xs leading-6 text-white/75">
               Authentic Mexican food from our family-run truck in Cherry Hill
